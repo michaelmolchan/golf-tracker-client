@@ -22,16 +22,16 @@
             </button>
             <a class="navbar-brand brand-custom" href="#">Golf Tracker</a>
           </div>
-          <!-- <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav nav-sign-in">
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <!-- <ul class="nav navbar-nav nav-sign-in">
               <li data-toggle="modal" data-target="#signUpModal"><a href="#" ><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
               <li data-toggle="modal" data-target="#signInModal"><a href="#" ><span class="glyphicon glyphicon-user"></span> Sign In</a></li>
-            </ul>
+            </ul> -->
             <ul class="nav navbar-nav navbar-right">
               <button id="change-password" type="button" class="btn btn-info btn-style" data-toggle="modal" data-target="#changePasswordModal"><span class="glyphicon glyphicon-lock"></span> Change Password</button>
-              <button id="sign-out" type="button" class="btn btn-warning btn-style" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-log-out"></span> Sign Out</button>
+              <button id="sign-out" type="button" class="btn btn-secondary btn-style" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-log-out"></span> Sign Out</button>
             </ul>
-          </div> -->
+          </div>
         </div>
       </nav>
 
@@ -75,6 +75,7 @@
 									</div>
 								</form>
                 <form id="login-form" style="display: none;">
+                  <div id="register-success"></div>
                   <div id="login-error" class="alert alert-danger">
                     <strong>Unable to log in!</strong> Please try again!
                   </div>
@@ -98,92 +99,28 @@
 				</div>
 			</div>
 		</div>
-	</div>
+  </div>
 
       <!-- MODALS -->
 
-      <!-- Sign Up Modal -->
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- Log In Success Modal -->
+      <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <h2 class="modal-title-custom" id="exampleModalLabel">Sign Up</h2>
-            </div>
+            </div> -->
             <div class="modal-body">
-              <form id="sign-up-form">
-                <div class="form-group">
-                  <div id="sign-up-error" class="alert alert-danger">
-                    <strong>Unable to sign up!</strong> Please try again!
-                  </div>
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Confirm Password</label>
-                  <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success">Sign Up</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sign In Modal -->
-      <div class="modal fade" id="signInSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <h2 class="modal-title-custom" id="exampleModalLabel">Sign In</h2>
+              <div id="success-message"></div>
             </div>
-            <div class="modal-body">
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h2 class="modal-title-custom" id="exampleModalLabel">Sign In</h2>
-            </div>
-            <div class="modal-body">
-              <form id="sign-in-form">
-                <div class="form-group">
-                  <div id="sign-in-error" class="alert alert-danger">
-                    <strong>Unable to sign in!</strong> Please try again!
-                  </div>
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success">Sign In</button>
-                </div>
-              </form>
-            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div> -->
           </div>
         </div>
       </div>
@@ -203,9 +140,6 @@
                 <div class="form-group">
                   <div id="change-pw-error" class="alert alert-danger">
                     <strong>Change password failed!</strong> Please try again!
-                  </div>
-                  <div id="change-pw-success-message" class="alert alert-success">
-                    <strong>Your password has been updated!</strong>
                   </div>
                   <label for="exampleInputEmail1">Old Password</label>
                   <input name="passwords[old]" type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password">

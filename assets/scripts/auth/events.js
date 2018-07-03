@@ -21,6 +21,7 @@ const onLogIn = function (event) {
 }
 
 const onLogInFormLink = function (event) {
+  $('#register-error').hide()
   $('#login-form').delay(100).fadeIn(100)
   $('#register-form').fadeOut(100)
   $('#register-form-link').removeClass('active')
@@ -29,6 +30,7 @@ const onLogInFormLink = function (event) {
 }
 
 const onRegisterFormLink = function (event) {
+  $('#login-error').hide()
   $('#register-form').delay(100).fadeIn(100)
   $('#login-form').fadeOut(100)
   $('#login-form-link').removeClass('active')
