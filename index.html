@@ -35,7 +35,8 @@
         </div>
       </nav>
 
-      <div class="container">
+      <!--Register/Log In Forms-->
+      <div id="auth-forms" class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
@@ -58,13 +59,13 @@
                     <strong>Unable to register!</strong> Please try again!
                   </div>
 									<div class="form-group">
-										<input type="email" name="credentials[email]" tabindex="1" class="form-control" placeholder="Email Address">
+										<input type="email" name="credentials[email]" tabindex="1" class="form-control" placeholder="Email Address" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="credentials[password_confirmation]" tabindex="2" class="form-control" placeholder="Confirm Password">
+										<input type="password" name="credentials[password_confirmation]" tabindex="2" class="form-control" placeholder="Confirm Password" required>
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -80,10 +81,10 @@
                     <strong>Unable to log in!</strong> Please try again!
                   </div>
                   <div class="form-group">
-										<input type="email" name="credentials[email]" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+										<input type="email" name="credentials[email]" id="email" tabindex="1" class="form-control" placeholder="Email Address" required>
 									</div>
                   <div class="form-group">
-                    <input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password">
+                    <input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password" required>
                   </div>
                   <div class="form-group">
                     <div class="row">
@@ -101,26 +102,79 @@
 		</div>
   </div>
 
+  <!--Golf Round Tracker-->
+  <!-- <h1>Responsive CSS Tabs</h1> -->
+	<div class="golf-tracker">
+    <input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><span><span class="glyphicon glyphicon-plus"></span> Add Round</span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><span><span class="glyphicon glyphicon-list"></span> View Rounds</span></label>
+
+			<section id="content1" class="tab-content">
+				<h3><span class="glyphicon glyphicon-plus"></span> Add Your Golf Round</h3>
+		      	<p>Fill in the information below to add a round to your golfer profile!</p>
+          	<div class="row">
+      			<div class="col-md-8 col-md-offset-2">
+      				<div class="panel panel-login">
+      					<div class="panel-body">
+      						<div class="row">
+      							<div class="col-lg-12">
+      								<form id="add-round-form" style="display: block;">
+                        <div id="add-round-error" class="alert alert-danger">
+                          <strong>Unable to add round!</strong> Please try again!
+                        </div>
+      									<div class="form-group">
+      										<input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="Date" required>
+      									</div>
+      									<div class="form-group">
+      										<input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="Golf Course" required>
+      									</div>
+      									<div class="form-group">
+      										<input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="Course Location" required>
+      									</div>
+                        <div class="form-group">
+                          <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="Course Par" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="Your Score" required>
+                        </div>
+      									<div class="form-group">
+      										<div class="row">
+      											<div class="col-sm-6 col-sm-offset-3">
+      												<input type="submit" name="register-submit" tabindex="4" class="form-control btn btn-register" value="Add Round">
+      											</div>
+      										</div>
+      									</div>
+      								</form>
+      							</div>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+			</section>
+
+			<section id="content2" class="tab-content">
+				<h3>View Your Golf Rounds &#9971;</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+			</section>
+		</div>
+
       <!-- MODALS -->
 
-      <!-- Log In Success Modal -->
+      <!-- Success Message Modal -->
       <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <!-- <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div> -->
             <div class="modal-body">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
               <div id="success-message"></div>
             </div>
-            <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div> -->
           </div>
         </div>
       </div>

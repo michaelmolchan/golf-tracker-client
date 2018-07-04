@@ -4,12 +4,14 @@
 // const example = require('./example')
 
 const authEvents = require('./auth/events')
+const roundsEvents = require('./rounds/events')
 // const authApi = require('./auth/api')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
 $(() => {
+  $('.golf-tracker').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#change-pw-error').hide()
@@ -22,4 +24,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#login-form-link').on('click', authEvents.onLogInFormLink)
   $('#register-form-link').on('click', authEvents.onRegisterFormLink)
+  // Rounds
+  $('#add-round-error').hide()
+  $('#add-round-form').on('submit', roundsEvents.onAddRound)
 })

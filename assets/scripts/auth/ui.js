@@ -23,10 +23,12 @@ const registerError = function (registerError) {
 
 const logInSuccess = function (logInResponse) {
   store.user = logInResponse.user
+  console.log(logInResponse)
   $('#change-password').delay(200).fadeIn(100)
   $('#sign-out').delay(200).fadeIn(100)
+  $('.golf-tracker').delay(200).fadeIn(100)
   $('#login-form')[0].reset()
-  $('.panel').hide()
+  $('#auth-forms').hide()
   $('#successModal').modal('show')
   $('#success-message').html('Successfully logged in as ' + store.user.email)
 }
@@ -59,12 +61,15 @@ const signOutSuccess = function (signOutResponse) {
   $('#login-form').fadeOut(100)
   $('#login-form-link').removeClass('active')
   $('#register-form-link').addClass('active')
-  $('.panel').show()
+  $('#auth-forms').show()
   $('#register-success').hide()
   $('#register-form')[0].reset()
   $('#login-form')[0].reset()
   $('#register-error').hide()
   $('#login-error').hide()
+  $('.golf-tracker').hide()
+  $('#successModal').modal('show')
+  $('#success-message').text('You successfully signed out!')
 }
 
 const signOutError = function (signOutError) {

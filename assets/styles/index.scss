@@ -3,8 +3,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
 
 body {
-  padding-top: 90px;
-  background-image: url("https://wallpapertag.com/wallpaper/full/9/c/6/132141-golf-background-2048x1365-samsung-galaxy.jpg");
+  padding-top: 75px;
+  background-image: url('https://i.imgur.com/sc99Bbn.jpg');
   background-size: cover;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -53,12 +53,12 @@ body {
 	transition: all 0.1s linear;
 }
 
-.panel-heading a.active{
+.panel-heading a.active {
 	color: #029f5b;
 	font-size: 22px;
 }
 
-.panel-heading hr{
+.panel-heading hr {
 	margin-top: 10px;
 	margin-bottom: 0px;
 	clear: both;
@@ -69,7 +69,6 @@ body {
 	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
-
 
 .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
 	height: 45px;
@@ -124,4 +123,133 @@ body {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
+}
+
+
+/*Golf Round Tracker*/
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.golf-tracker {
+	width: 90%;
+	margin: 0 auto 20px;
+	position: relative;
+}
+
+input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+.golf-tracker label {
+  font-weight: 700;
+  font-size: 20px;
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 15px;
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2 {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  color: #999;
+  border-bottom: 7px solid #5DB3DE;
+}
+
+.golf-tracker .tab-content p,
+.golf-tracker .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+
+.golf-tracker .tab-content p,
+.golf-tracker .tab-content h3 {
+  text-align: center;
+}
+
+.golf-tracker [id^="tab"]:checked + label {
+  background: #fff;
+  box-shadow: inset 0 7px #5DB3DE;
+}
+
+// .golf-tracker [id^="tab"]:checked + label .fa {
+//   color: #0CE;
+// }
+
+// label .fa {
+//   font-size: 1.3em;
+//   margin: 0 0.4em 0 0;
+// }
+
+/*Media query*/
+@media only screen and (max-width: 930px) {
+  .golf-tracker label span {
+    font-size: 16px;
+  }
+  .golf-tracker label .fa {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .golf-tracker label {
+    width: 50%;
+  }
+  .golf-tracker label .fa {
+    font-size: 16px;
+  }
+
+  .golf-tracker {
+    width: 95%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
 }
