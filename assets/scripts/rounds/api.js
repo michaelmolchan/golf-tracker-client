@@ -13,6 +13,29 @@ const addRound = function (data) {
   })
 }
 
+const getRounds = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + 'rounds',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// const getRound = function (data) {
+//   return $.ajax({
+//     method: 'GET',
+//     url: config.apiUrl + 'rounds/' + data,
+//     data: data,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
-  addRound
+  addRound,
+  getRounds
+  // getRound
 }

@@ -12,6 +12,30 @@ const onAddRound = function (event) {
     .catch(roundsUi.addRoundError)
 }
 
+const onGetRounds = function (event) {
+  event.preventDefault()
+  roundsApi.getRounds()
+    .then(roundsUi.getRoundsSuccess)
+    .catch(roundsUi.getRoundsError)
+}
+
+// const onGetRound = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log(data)
+//   roundsApi.getRound(data)
+//     .then(roundsUi.getRoundSuccess)
+//     .catch(roundsUi.getRoundError)
+// }
+
+const onAddRoundTabClick = function () {
+  $('#get-rounds-error').hide()
+  $('#no-rounds-error').hide()
+}
+
 module.exports = {
-  onAddRound
+  onAddRound,
+  onGetRounds,
+  onAddRoundTabClick
+  // onGetRound
 }

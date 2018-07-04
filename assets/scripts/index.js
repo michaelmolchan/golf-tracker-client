@@ -24,7 +24,23 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#login-form-link').on('click', authEvents.onLogInFormLink)
   $('#register-form-link').on('click', authEvents.onRegisterFormLink)
-  // Rounds
+  // Add Round
   $('#add-round-error').hide()
   $('#add-round-form').on('submit', roundsEvents.onAddRound)
+  // Get Round By ID
+  // $('#get-round-error').hide()
+  // $('#get-round-form').on('submit', roundsEvents.onGetRound)
+  // Get Rounds
+  $('#get-rounds-error').hide()
+  $('#no-rounds-error').hide()
+  $('#get-rounds').on('click', roundsEvents.onGetRounds)
+
+  $('.add-round-tab').on('click', roundsEvents.onAddRoundTabClick)
+
+  // Get Rounds by clicking 'View Rounds' tab
+  // $('.view-rounds-tab').click(function () {
+  //   if ($(this).is(':checked')) {
+  //     console.log('It worked!')
+  //   }
+  // })
 })

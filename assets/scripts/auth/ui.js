@@ -69,6 +69,8 @@ const signOutSuccess = function (signOutResponse) {
   $('#login-error').hide()
   $('.golf-tracker').hide()
   $('#successModal').modal('show')
+  $('#get-rounds-error').hide()
+  $('#no-rounds-error').hide()
   $('#success-message').text('You successfully signed out!')
 }
 

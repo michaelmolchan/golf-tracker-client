@@ -87,7 +87,8 @@ body {
 	border-color: #ccc;
 }
 
-.btn-login {
+.btn-login,
+.btn-get-round {
 	background-color: #59B2E0;
 	outline: none;
 	color: #fff;
@@ -106,7 +107,8 @@ body {
 	border-color: #53A3CD;
 }
 
-.btn-register {
+.btn-register,
+.btn-add-round {
 	background-color: #1CB94E;
 	outline: none;
 	color: #fff;
@@ -185,11 +187,11 @@ input, section {
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2 {
+  background: #fff;
+  border-bottom: 7px solid #5DB3DE;
+  color: #999;
   display: block;
   padding: 20px;
-  background: #fff;
-  color: #999;
-  border-bottom: 7px solid #5DB3DE;
 }
 
 .golf-tracker .tab-content p,
@@ -197,10 +199,6 @@ input, section {
   -webkit-animation: fadeInScale 0.7s ease-in-out;
   -moz-animation: fadeInScale 0.7s ease-in-out;
   animation: fadeInScale 0.7s ease-in-out;
-}
-
-.golf-tracker .tab-content p,
-.golf-tracker .tab-content h3 {
   text-align: center;
 }
 
