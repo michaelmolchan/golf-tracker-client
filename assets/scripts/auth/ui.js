@@ -17,7 +17,7 @@ const registerSuccess = function (registerResponse) {
 }
 
 const registerError = function (registerError) {
-  $('#register-error').show()
+  $('#register-error').delay(100).fadeIn(100)
   $('#register-form')[0].reset()
 }
 
@@ -34,7 +34,7 @@ const logInSuccess = function (logInResponse) {
 }
 
 const logInError = function (logInError) {
-  $('#login-error').show()
+  $('#login-error').delay(100).fadeIn(100)
   $('#login-form')[0].reset()
 }
 
