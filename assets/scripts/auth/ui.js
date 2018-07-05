@@ -72,6 +72,10 @@ const signOutSuccess = function (signOutResponse) {
   $('#get-rounds-error').hide()
   $('#no-rounds-error').hide()
   $('#success-message').text('You successfully signed out!')
+  $('.content').html('')
+  $('#content-header').hide()
+  $('.content').hide()
+  $('#get-rounds').show()
 }
 
 const signOutError = function (signOutError) {
