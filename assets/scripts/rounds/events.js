@@ -31,6 +31,10 @@ const onGetRounds = function (event) {
 const onAddRoundTabClick = function () {
   $('#get-rounds-error').hide()
   $('#no-rounds-error').hide()
+  $('.content').html('')
+  $('#content-header').hide()
+  $('.content').hide()
+  $('#get-rounds').show()
 }
 
 module.exports = {

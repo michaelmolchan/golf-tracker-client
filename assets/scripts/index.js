@@ -34,7 +34,8 @@ $(() => {
   $('#get-rounds-error').hide()
   $('#no-rounds-error').hide()
   $('#get-rounds').on('click', roundsEvents.onGetRounds)
-
+  $('#content-header').hide()
+  $('.content').hide()
   $('.add-round-tab').on('click', roundsEvents.onAddRoundTabClick)
 
   // Get Rounds by clicking 'View Rounds' tab

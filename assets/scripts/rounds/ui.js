@@ -1,6 +1,7 @@
 'use strict'
 
 // const store = require('../store')
+const showRoundsTemplate = require('../templates/round-listing.handlebars')
 
 const addRoundSuccess = function (addRoundResponse) {
   console.log(addRoundResponse)
@@ -16,8 +17,15 @@ const addRoundError = function (addRoundError) {
 
 const getRoundsSuccess = function (getRoundsResponse) {
   console.log(getRoundsResponse)
+  $('#get-rounds-error').hide()
+  $('#content-header').show()
+  $('.content').show()
+  $('#get-rounds').hide()
+  const showRoundsHtml = showRoundsTemplate({ rounds: getRoundsResponse.rounds })
   if (getRoundsResponse.rounds.length === 0) {
     $('#no-rounds-error').delay(100).fadeIn(100)
+  } else {
+    $('.content').append(showRoundsHtml)
   }
 }
 
