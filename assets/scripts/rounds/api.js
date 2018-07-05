@@ -23,6 +23,16 @@ const getRounds = function () {
   })
 }
 
+const removeRound = (roundId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + 'rounds/' + roundId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // const getRound = function (data) {
 //   return $.ajax({
 //     method: 'GET',
@@ -36,6 +46,7 @@ const getRounds = function () {
 
 module.exports = {
   addRound,
-  getRounds
+  getRounds,
+  removeRound
   // getRound
 }

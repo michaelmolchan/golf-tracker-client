@@ -1,5 +1,18 @@
 {{#each rounds as |round|}}
-  <ul data-id="{{round.id}}">
+
+  <div class="round-display" id="{{round.id}}" data-id="{{round.id}}">
+    <h2><b>Round ID:</b> {{round.id}}</h2>
+    <h4><b>Date:</b> {{round.date}}</h4>
+    <h4><b>Course:</b> {{round.course}}</h4>
+    <h4><b>Course Location:</b> {{round.location}}</h4>
+    <h4><b>Course Par:</b> {{round.par}}</h4>
+    <h4><b>Score:</b> {{round.score}}</h4>
+    <button class="btn btn-info update-round" data-taz="hello taz" data-id='{{round.id}}'>Update Round</button>
+    <button id="remove-round" class="btn btn-danger" data-taz="hello taz" data-id='{{round.id}}'>Remove Round</button>
+    <hr>
+  </div>
+
+  <!-- <ul data-id="{{round.id}}">
     <li><h1 data-title='{{round.course}}'> <small>Course: {{round.course}}</small></h1></li>
     <li>{{round.date}}</li>
     <li>{{round.location}}</li>
@@ -7,5 +20,6 @@
     <li>{{round.score}}</li>
     <li><button class="btn btn-info update-round" data-taz="hello taz" data-id='{{round.id}}'>Update Round</button></li>
     <li><button class="btn btn-danger remove-round" data-taz="hello taz" data-id='{{round.id}}'>Remove Round</button></li>
-  </ul>
+  </ul> -->
+
 {{/each}}

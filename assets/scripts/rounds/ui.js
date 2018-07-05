@@ -33,6 +33,15 @@ const getRoundsError = function (getRoundsError) {
   $('#get-rounds-error').delay(100).fadeIn(100)
 }
 
+const removeRoundSuccess = function (removeRoundsSuccess) {
+  $('#successModal').modal('show')
+  $('#success-message').html('You successfully removed this round!')
+}
+
+const removeRoundError = function (removeRoundsError) {
+  console.log(removeRoundsError)
+}
+
 // const getRoundSuccess = function (getRoundResponse) {
 //   console.log(getRoundResponse)
 //   $('#get-round-form')[0].reset()
@@ -47,7 +56,9 @@ module.exports = {
   addRoundSuccess,
   addRoundError,
   getRoundsSuccess,
-  getRoundsError
+  getRoundsError,
+  removeRoundSuccess,
+  removeRoundError
   // getRoundSuccess,
   // getRoundError
 }

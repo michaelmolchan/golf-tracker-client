@@ -14,6 +14,7 @@ const onAddRound = function (event) {
 
 const onGetRounds = function (event) {
   event.preventDefault()
+  // console.log(event)
   roundsApi.getRounds()
     .then(roundsUi.getRoundsSuccess)
     .catch(roundsUi.getRoundsError)
@@ -37,9 +38,19 @@ const onAddRoundTabClick = function () {
   $('#get-rounds').show()
 }
 
+const onRemoveRound = function (event) {
+  event.preventDefault()
+  const roundId = $(event.target).attr('data-id')
+  roundsApi.removeRound(roundId)
+    .then(roundsUi.removeRoundSuccess)
+    // .then(() => onGetRounds(event))
+    .catch(roundsUi.removeRoundError)
+}
+
 module.exports = {
   onAddRound,
   onGetRounds,
-  onAddRoundTabClick
+  onAddRoundTabClick,
+  onRemoveRound
   // onGetRound
 }

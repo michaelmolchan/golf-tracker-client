@@ -37,6 +37,7 @@ $(() => {
   $('#content-header').hide()
   $('.content').hide()
   $('.add-round-tab').on('click', roundsEvents.onAddRoundTabClick)
+  $('.content').on('click', '#remove-round', roundsEvents.onRemoveRound)
 
   // Get Rounds by clicking 'View Rounds' tab
   // $('.view-rounds-tab').click(function () {
