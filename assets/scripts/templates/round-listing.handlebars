@@ -2,24 +2,86 @@
 
   <div class="round-display" id="{{round.id}}" data-id="{{round.id}}">
     <h2><b>Round ID:</b> {{round.id}}</h2>
-    <h4><b>Date:</b> {{round.date}}</h4>
-    <h4><b>Course:</b> {{round.course}}</h4>
-    <h4><b>Course Location:</b> {{round.location}}</h4>
-    <h4><b>Course Par:</b> {{round.par}}</h4>
-    <h4><b>Score:</b> {{round.score}}</h4>
-    <button class="btn btn-info update-round" data-taz="hello taz" data-id='{{round.id}}'>Update Round</button>
-    <button id="remove-round" class="btn btn-danger" data-taz="hello taz" data-id='{{round.id}}'>Remove Round</button>
+    <h2><b>Date:</b> {{round.date}}</h2>
+    <form class='edit-course' data-id="{{round.id}}">
+      <input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="{{round.date}}">
+      <button class="btn btn-info" type="submit">Update</button>
+    </form>
+    <h2><b>Course:</b> {{round.course}}</h2>
+    <form class='edit-course' data-id="{{round.id}}">
+      <input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="{{round.course}}">
+      <button class="btn btn-info" type="submit">Update</button>
+    </form>
+    <h2><b>Course Location:</b> {{round.location}}</h2>
+    <form class='edit-location' data-id="{{round.id}}">
+      <input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="{{round.location}}">
+      <button class="btn btn-info" type="submit">Update</button>
+    </form>
+    <h2><b>Course Par:</b> {{round.par}}</h2>
+    <form class='edit-par' data-id="{{round.id}}">
+      <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="{{round.par}}">
+      <button class="btn btn-info" type="submit">Update</button>
+    </form>
+    <h2><b>Score:</b> {{round.score}}</h2>
+    <form class='edit-score' data-id="{{round.id}}">
+      <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="{{round.score}}">
+      <button class="btn btn-info" type="submit">Update</button>
+    </form>
+    <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateRoundModal" data-id='{{round.id}}'>Update Round</button>
+    <button id="remove-round" class="btn btn-danger" data-id='{{round.id}}'>Remove Round</button> -->
+    <!-- <div class='edit-round'>
+      <h3>Edit Round</h3>
+      <form class='edit-round-form' data-id="{{round.id}}">
+        <input name='round[id]' type="text" readonly>
+        <input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="{{round.date}}">
+        <input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="{{round.course}}">
+        <input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="{{round.location}}">
+        <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="{{round.par}}">
+        <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="{{round.score}}">
+        <button class="btn btn-info" type="submit">Update</button>
+      </form>
+    </div> -->
     <hr>
   </div>
 
-  <!-- <ul data-id="{{round.id}}">
-    <li><h1 data-title='{{round.course}}'> <small>Course: {{round.course}}</small></h1></li>
-    <li>{{round.date}}</li>
-    <li>{{round.location}}</li>
-    <li>{{round.par}}</li>
-    <li>{{round.score}}</li>
-    <li><button class="btn btn-info update-round" data-taz="hello taz" data-id='{{round.id}}'>Update Round</button></li>
-    <li><button class="btn btn-danger remove-round" data-taz="hello taz" data-id='{{round.id}}'>Remove Round</button></li>
-  </ul> -->
+  <!-- Update Round Modal -->
+  <!-- <div class="modal fade" id="updateRoundModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2 class="modal-title-custom" id="exampleModalLabel">Update Round</h2>
+        </div>
+        <div class="modal-body">
+          <form class="update-round">
+            <div id="update-round-error" class="alert alert-danger">
+              <strong>Unable to update round!</strong> Please try again!
+            </div>
+            <div class="form-group">
+              <input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="Date">
+            </div>
+            <div class="form-group">
+              <input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="Golf Course">
+            </div>
+            <div class="form-group">
+              <input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="Course Location">
+            </div>
+            <div class="form-group">
+              <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="Course Par">
+            </div>
+            <div class="form-group">
+              <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="Your Score">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success" data-id='{{round.id}}'>Update Round</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
 {{/each}}

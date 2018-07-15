@@ -16,7 +16,6 @@ const addRoundError = function (addRoundError) {
 }
 
 const getRoundsSuccess = function (getRoundsResponse) {
-  console.log(getRoundsResponse)
   $('#get-rounds-error').hide()
   $('#content-header').show()
   $('.content').show()
@@ -39,7 +38,7 @@ const removeRoundSuccess = function (removeRoundsSuccess) {
 }
 
 const removeRoundError = function (removeRoundsError) {
-  console.log(removeRoundsError)
+  // console.log(removeRoundsError)
 }
 
 // const getRoundSuccess = function (getRoundResponse) {
@@ -52,13 +51,24 @@ const removeRoundError = function (removeRoundsError) {
 //   $('#get-round-error').delay(100).fadeIn(100)
 // }
 
+const updateRoundSuccess = function (updateRoundResponse) {
+  $('#successModal').modal('show')
+  $('#success-message').html('Your round has been updated!')
+}
+
+const updateRoundError = function (updateRoundError) {
+  // console.log(updateRoundError)
+}
+
 module.exports = {
   addRoundSuccess,
   addRoundError,
   getRoundsSuccess,
   getRoundsError,
   removeRoundSuccess,
-  removeRoundError
+  removeRoundError,
+  updateRoundSuccess,
+  updateRoundError
   // getRoundSuccess,
   // getRoundError
 }

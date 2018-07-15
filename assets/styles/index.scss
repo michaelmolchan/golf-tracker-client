@@ -1,6 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
+@import url('https://fonts.googleapis.com/css?family=Teko:700');
 
 body {
   padding-top: 75px;
@@ -12,6 +13,11 @@ body {
 
 .btn-style {
   margin: 10px;
+}
+
+.brand-custom {
+  font-family: 'Teko', sans-serif;
+  color: #ffffff;
 }
 
 .round-display {

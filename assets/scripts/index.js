@@ -38,11 +38,13 @@ $(() => {
   $('.content').hide()
   $('.add-round-tab').on('click', roundsEvents.onAddRoundTabClick)
   $('.content').on('click', '#remove-round', roundsEvents.onRemoveRound)
-
-  // Get Rounds by clicking 'View Rounds' tab
-  // $('.view-rounds-tab').click(function () {
-  //   if ($(this).is(':checked')) {
-  //     console.log('It worked!')
-  //   }
-  // })
+  $('#update-round-error').hide()
+  // Update Round
+  // $('.edit-round-form').on('submit', roundsEvents.onUpdateRound)
+  // $('.content').on('submit', '.edit-round-form', roundsEvents.onUpdateRound)
+  $('.content').on('submit', '.edit-date', roundsEvents.onUpdateRound)
+  $('.content').on('submit', '.edit-course', roundsEvents.onUpdateRound)
+  $('.content').on('submit', '.edit-location', roundsEvents.onUpdateRound)
+  $('.content').on('submit', '.edit-par', roundsEvents.onUpdateRound)
+  $('.content').on('submit', '.edit-score', roundsEvents.onUpdateRound)
 })

@@ -20,6 +20,13 @@ const onGetRounds = function (event) {
     .catch(roundsUi.getRoundsError)
 }
 
+const refreshRounds = function (event) {
+  $('.content').html('')
+  roundsApi.getRounds()
+    .then(roundsUi.getRoundsSuccess)
+    .catch(roundsUi.getRoundsError)
+}
+
 // const onGetRound = function (event) {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -43,14 +50,26 @@ const onRemoveRound = function (event) {
   const roundId = $(event.target).attr('data-id')
   roundsApi.removeRound(roundId)
     .then(roundsUi.removeRoundSuccess)
-    // .then(() => onGetRounds(event))
+    .then(() => onGetRounds(event))
     .catch(roundsUi.removeRoundError)
+}
+
+const onUpdateRound = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const roundId = $(event.target).attr('data-id')
+  roundsApi.updateRound(data, roundId)
+    .then(roundsUi.updateRoundSuccess)
+    .catch(roundsUi.updateRoundError)
+    .then(refreshRounds)
 }
 
 module.exports = {
   onAddRound,
   onGetRounds,
   onAddRoundTabClick,
-  onRemoveRound
+  onRemoveRound,
+  onUpdateRound,
+  refreshRounds
   // onGetRound
 }
