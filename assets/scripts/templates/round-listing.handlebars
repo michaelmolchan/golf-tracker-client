@@ -4,31 +4,31 @@
     <h2><b>Round ID:</b> {{round.id}}</h2>
     <h2><b>Date:</b> {{round.date}}</h2>
     <form class='edit-course' data-id="{{round.id}}">
-      <input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="{{round.date}}">
-      <button class="btn btn-info" type="submit">Update</button>
+      <input type="date" name="round[date]" tabindex="1" class="form-control" placeholder="{{round.date}}" required>
+      <button class="btn btn-info btn-style" type="submit">Update</button>
     </form>
     <h2><b>Course:</b> {{round.course}}</h2>
     <form class='edit-course' data-id="{{round.id}}">
-      <input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="{{round.course}}">
-      <button class="btn btn-info" type="submit">Update</button>
+      <input type="text" name="round[course]" tabindex="2" class="form-control" placeholder="{{round.course}}" required>
+      <button class="btn btn-info btn-style" type="submit">Update</button>
     </form>
     <h2><b>Course Location:</b> {{round.location}}</h2>
     <form class='edit-location' data-id="{{round.id}}">
-      <input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="{{round.location}}">
-      <button class="btn btn-info" type="submit">Update</button>
+      <input type="text" name="round[location]" tabindex="3" class="form-control" placeholder="{{round.location}}" required>
+      <button class="btn btn-info btn-style" type="submit">Update</button>
     </form>
     <h2><b>Course Par:</b> {{round.par}}</h2>
     <form class='edit-par' data-id="{{round.id}}">
-      <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="{{round.par}}">
-      <button class="btn btn-info" type="submit">Update</button>
+      <input type="text" name="round[par]" tabindex="4" class="form-control" placeholder="{{round.par}}" required>
+      <button class="btn btn-info btn-style" type="submit">Update</button>
     </form>
     <h2><b>Score:</b> {{round.score}}</h2>
     <form class='edit-score' data-id="{{round.id}}">
-      <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="{{round.score}}">
-      <button class="btn btn-info" type="submit">Update</button>
+      <input type="text" name="round[score]" tabindex="5" class="form-control" placeholder="{{round.score}}" required>
+      <button class="btn btn-info btn-style" type="submit">Update</button>
     </form>
-    <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateRoundModal" data-id='{{round.id}}'>Update Round</button>
-    <button id="remove-round" class="btn btn-danger" data-id='{{round.id}}'>Remove Round</button> -->
+    <button id="remove-round" class="btn btn-danger btn-style" data-id='{{round.id}}'>Remove Round</button>
+    <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateRoundModal" data-id='{{round.id}}'>Update Round</button> -->
     <!-- <div class='edit-round'>
       <h3>Edit Round</h3>
       <form class='edit-round-form' data-id="{{round.id}}">

@@ -23,7 +23,6 @@ const registerError = function (registerError) {
 
 const logInSuccess = function (logInResponse) {
   store.user = logInResponse.user
-  console.log(logInResponse)
   $('#change-password').delay(200).fadeIn(100)
   $('#sign-out').delay(200).fadeIn(100)
   $('.golf-tracker').delay(200).fadeIn(100)

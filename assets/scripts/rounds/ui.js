@@ -4,7 +4,6 @@
 const showRoundsTemplate = require('../templates/round-listing.handlebars')
 
 const addRoundSuccess = function (addRoundResponse) {
-  console.log(addRoundResponse)
   $('#add-round-form')[0].reset()
   $('#successModal').modal('show')
   $('#success-message').html('Your round has been added to your profile!')

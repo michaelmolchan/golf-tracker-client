@@ -50,8 +50,8 @@ const onRemoveRound = function (event) {
   const roundId = $(event.target).attr('data-id')
   roundsApi.removeRound(roundId)
     .then(roundsUi.removeRoundSuccess)
-    .then(() => onGetRounds(event))
     .catch(roundsUi.removeRoundError)
+    .then(refreshRounds)
 }
 
 const onUpdateRound = function (event) {
